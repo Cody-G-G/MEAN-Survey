@@ -1,0 +1,4 @@
+C:\Program Files\MongoDB\Server\3.2\bin
+mongod --config "F:\Projects\Web Projects\MEAN-Survey\data\db\mongo-config.yaml"
+
+browserify index.js app-config.js logger.js login-ctrl.js register-ctrl.js survey-ctrl.js -o bundle.js
