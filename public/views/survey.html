@@ -1,0 +1,57 @@
+<!-- All the files that are required -->
+<link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href='../css/userHandling-master.css' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<div class="container" style="border:0px; padding:0px; margin-right:0px;" ng-controller="surveyController">
+    <div class="text-right">
+        <button type='button' class="btn btn-primary" ng-click="logOut()" >Logout</button>
+    </div>
+</div>
+<!-- SURVEY FORM -->
+<form name="surveyForm">
+    <div class="container" ng-controller="surveyController">
+        <div class="text-center" style="padding:50px 0">
+            <div class="row">
+                <h4><label style="margin-right:20px;">1. {{questions[0]}}</label></h4>
+                <label class="surveyRadioLabel"><input ng-required="!answers[0]" class="surveyRadioInput" type="radio" ng-model="answers[0]" value="answerOptions[0][0]">{{answerOptions[0][0]}}</label>
+                <label class="surveyRadioLabel"><input ng-required="!answers[0]" class="surveyRadioInput" type="radio" ng-model="answers[0]" value="answerOptions[0][1]">{{answerOptions[0][1]}}</label>
+                <label class="surveyRadioLabel"><input ng-required="!answers[0]" class="surveyRadioInput" type="radio" ng-model="answers[0]" value="answerOptions[0][2]">{{answerOptions[0][2]}}</label>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <h4><label style="margin-right:20px;">2. {{questions[1]}}</label></h4>
+                <input required type="text" ng-model="answers[1]">
+            </div>
+            <div class="row" style="margin-top:20px">
+                <h4><label style="margin-right:20px;">3. {{questions[2]}}</label></h4>
+                <label class="surveyRadioLabel"><input ng-required="!answers[2]" class="surveyRadioInput" type="radio" ng-model="answers[2]" value="answerOptions[1][0]">{{answerOptions[1][0]}}</label>
+                <br>
+                <label class="surveyRadioLabel"><input ng-required="!answers[2]" class="surveyRadioInput" type="radio" ng-model="answers[2]" value="answerOptions[1][1]">{{answerOptions[1][1]}}</label>
+                <br>
+                <label class="surveyRadioLabel"><input ng-required="!answers[2]" class="surveyRadioInput" type="radio" ng-model="answers[2]" value="answerOptions[1][2]">{{answerOptions[1][2]}}</label>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <h4><label style="margin-right:20px;">4. {{questions[3]}}</label></h4>
+                <input required type="text" ng-model="answers[3]">
+            </div>
+            <div class="row" style="margin-top:20px">
+                <h4><label style="margin-right:20px;">5. {{questions[4]}}</label></h4>
+                <label class="surveyRadioLabel"><input ng-required="!answers[4]" ng-model="answers[4]" class="surveyRadioInput" value="answerOptions[2][0]" type="radio">{{answerOptions[2][0]}}</label>
+                <label class="surveyRadioLabel"><input ng-required="!answers[4]" ng-model="answers[4]" class="surveyRadioInput" value="answerOptions[2][1]" type="radio">{{answerOptions[2][1]}}</label>
+                <label class="surveyRadioLabel"><input ng-required="!answers[4]" ng-model="answers[4]" class="surveyRadioInput" value="answerOptions[2][2]" type="radio">{{answerOptions[2][2]}}</label>
+                <label class="surveyRadioLabel"><input ng-required="!answers[4]" ng-model="answers[4]" class="surveyRadioInput" value="answerOptions[2][3]" type="radio">{{answerOptions[2][3]}}</label>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <h4><label style="margin-right:20px;">6. {{questions[5]}}</label></h4>
+                <input required type="text" ng-model="answers[5]">
+            </div>
+            <div class="row" style="margin-top:50px">
+                <button ng-disabled="surveyForm.$invalid || userSubmissionExists" ng-click="submitForm()" type='submit' class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- END SURVEY FORM -->

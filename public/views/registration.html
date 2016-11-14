@@ -1,0 +1,50 @@
+<!-- All the files that are required -->
+<link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href='../css/userHandling-master.css' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script href="/vendor/angular/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<div class="text-center" style="padding:50px 0" ng-controller="registerController">
+    <div class="logo">register</div>
+    <div class="message" ng-style="{'color':registerAlertColor}" ng-if="registerMessage.length > 0">
+        {{registerMessage}}
+    </div>
+    <div class="login-form-1">
+
+        <!-- REGISTRATION FORM -->
+        <form id="register-form" class="text-left">
+            <div class="login-form-main-message"></div>
+            <div class="main-login-form">
+
+                <div class="login-group" ng-style="{'border-color':registerAlertColor, 'border-style':'solid'}">
+                    <div class="form-group">
+                        <label for="reg_username" class="sr-only">Email address</label>
+                        <input type="text" class="form-control" id="reg_username" name="reg_username"
+                               placeholder="username" ng-model="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg_password" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="reg_password" name="reg_password"
+                               placeholder="password" ng-model="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+                        <input type="password" class="form-control" id="reg_password_confirm"
+                               name="reg_password_confirm" placeholder="confirm password" ng-model="passwordConfirm">
+                    </div>
+                </div>
+
+                <button type="submit" class="login-register-button" ng-click="submit()"><i class="fa fa-chevron-right"></i></button>
+            </div>
+
+            <div class="etc-login-form">
+                <p>already have an account? <a href="/login">login here</a></p>
+            </div>
+        </form>
+
+        <!-- END REGISTRATION FORM -->
+    </div>
+</div>

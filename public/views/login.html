@@ -1,0 +1,41 @@
+<!-- All the files that are required -->
+<link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href='../css/userHandling-master.css' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<div class="text-center" style="padding:50px 0" ng-controller="loginController">
+    <div class="logo">login</div>
+    <div class="message" ng-style="{'color':loginAlertColor}" ng-if="loginMessage.length > 0">{{loginMessage}}</div>
+    <div class="login-form-1">
+
+        <!-- LOGIN FORM -->
+        <form id="login-form" class="text-left">
+            <div class="login-form-main-message"></div>
+            <div class="main-login-form">
+
+                <div class="login-group" ng-style="{'border-color':loginAlertColor, 'border-style':'solid'}">
+                    <div class="form-group">
+                        <label for="lg_username" class="sr-only">Username</label>
+                        <input type="text" class="form-control" id="lg_username" name="lg_username"
+                               placeholder="username" ng-model="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="lg_password" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="lg_password" name="lg_password"
+                               placeholder="password" ng-model="password">
+                    </div>
+                </div>
+
+                <button type="submit" class="login-register-button" ng-click="submit()"><i class="fa fa-chevron-right"></i></button>
+
+            </div>
+            <div class="etc-login-form">
+                <p>new user? <a href="/register">create new account</a></p>
+            </div>
+        </form>
+        <!-- END LOGIN FORM -->
+    </div>
+</div>
